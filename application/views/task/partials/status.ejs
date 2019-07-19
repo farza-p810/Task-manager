@@ -1,0 +1,9 @@
+<% if(value === taskStatus.CREATED) { %>
+    <span class="badge badge-info">ایجاد شده</span>
+<% } else if(value === taskStatus.DOING) { %>
+    <span class="badge badge-primary">در حال انجام</span>
+<% } else if(value === taskStatus.DONE) { %>
+    <span class="badge badge-success">تمام شده</span>
+<% } else if(value === taskStatus.CANCELED) { %>
+    <span class="badge badge-danger">لغو شده</span>
+<% } %>
