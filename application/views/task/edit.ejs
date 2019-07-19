@@ -1,0 +1,60 @@
+<%- include('../layouts/header') %>
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                ویرایش وظیفه <%= task.title %>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/tasks/update/<%= task.id %>">
+                    <div class="form-group">
+                        <label for="task_title">عنوان</label>
+                        <input type="text" class="form-control" name="title" id="task_title"
+                            placeholder="عنوان وظیفه" value="<%= task.title %>">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="task_category">دسته بندی</label>
+                        <select class="form-control" name="category" id="task_category">
+                            <option value="">انتخاب کنید</option>
+                            <option <%= task.category=== 'مالی' ? 'selected' : '' %>>مالی</option>
+                            <option <%= task.category=== 'اداری' ? 'selected' : '' %>>اداری</option>
+                            <option <%= task.category=== 'فنی' ? 'selected' : '' %>>فنی</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task_owner">انجام دهنده</label>
+                        <input type="text" class="form-control" name="assignee" id="task_owner"
+                            placeholder="انجام دهنده وظیفه" value="<%= task.assignee %>">                
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                name="status" value="<%= taskStatus.DOING %>" <%= task.status === taskStatus.DOING ? 'checked' : '' %>>
+                            <label class="form-check-label" for="inlineRadio1">در حال انجام</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                name="status" value="<%= taskStatus.DONE %>" <%= task.status === taskStatus.DONE ? 'checked' : '' %>>
+                            <label class="form-check-label" for="inlineRadio2">انجام شده</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                name="status" value="<%= taskStatus.CREATED %>" <%= task.status === taskStatus.CREATED ? 'checked' : '' %>>
+                            <label class="form-check-label" for="inlineRadio2">ایجاد شده</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                name="status" value="<%= taskStatus.CANCELED %>" <%= task.status === taskStatus.CANCELES ? 'checked' : '' %>>
+                            <label class="form-check-label" for="inlineRadio2">لغو شده</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">ذخیره اطلاعات</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../layouts/footer') %>

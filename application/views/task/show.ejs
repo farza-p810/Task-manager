@@ -1,0 +1,43 @@
+<%- include('../layouts/header') %>
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                جزئیات وظیفه
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>مشخصه</th>
+                            <th>مقدار</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>شناسه</td>
+                            <td><%= task.id %></td>
+                        </tr>
+                        <tr>
+                            <td>عنوان</td>
+                            <td><%= task.title %></td>
+                        </tr>
+                        <tr>
+                            <td>دسته بندی</td>
+                            <td><%= task.category %></td>
+                        </tr>
+                        <tr>
+                            <td>انجام دهنده</td>
+                            <td><%= task.assignee %></td>
+                        </tr>
+                        <tr>
+                            <td>وضعیت</td>
+                            <td><%- include('partials/status', {value: task.status}) %></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../layouts/footer') %>

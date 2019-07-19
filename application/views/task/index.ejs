@@ -40,6 +40,11 @@
                                 <%- include('partials/status', {value: task.status}) %>
                             </td>
                             <td>
+                                <a href="/tasks/show/<%= task.id %>">
+                                    <i class="material-icons">
+                                        remove_red_eye
+                                    </i>
+                                </a>
                                 <a href="/tasks/edit/<%= task.id %>">
                                     <i class="material-icons">
                                         edit
