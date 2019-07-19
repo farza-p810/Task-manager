@@ -1,0 +1,36 @@
+<%- include('../layouts/header') %>
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                ایجاد وظیفه جدید
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/tasks/store">
+                    <div class="form-group">
+                        <label for="task_title">عنوان</label>
+                        <input type="text" class="form-control" name="title" id="task_title"
+                            placeholder="عنوان وظیفه">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="task_category">دسته بندی</label>
+                        <select class="form-control" name="category" id="task_category">
+                            <option value="0">انتخاب کنید</option>
+                            <option>مالی</option>
+                            <option>اداری</option>
+                            <option>فنی</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task_owner">انجام دهنده</label>
+                        <input type="text" class="form-control" name="assignee" id="task_owner"
+                            placeholder="انجام دهنده وظیفه">                
+                    </div>
+                    <button type="submit" class="btn btn-success">ذخیره اطلاعات</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../layouts/footer') %>

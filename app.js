@@ -2,6 +2,9 @@ const express = require("express");
 
 const application = express();
 
+const middleware = require("./boot/middleware");
+middleware(application);
+
 const router = require("./routes/router");
 router(application);
 
