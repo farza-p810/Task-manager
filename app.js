@@ -3,7 +3,7 @@ const express = require("express");
 const application = express();
 
 const run = cbSuccess => {
-  application.listen(5000, cbSuccess);
+    application.listen(process.env.APP_PORT, cbSuccess);
 };
 
 module.exports = run;
